@@ -2,5 +2,8 @@
     "name": "whatthefrog/mutation-testing",
     "description": "Example code for Mutation Testing in PHP using Infection",
     "type": "library",
+    "autoload": {
+        "psr-4": {"Example\\": "src/"}
+    },
     "require": {}
 }
