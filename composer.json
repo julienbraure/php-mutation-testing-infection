@@ -1,0 +1,6 @@
+{
+    "name": "whatthefrog/mutation-testing",
+    "description": "Example code for Mutation Testing in PHP using Infection",
+    "type": "library",
+    "require": {}
+}
