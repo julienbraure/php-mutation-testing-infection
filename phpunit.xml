@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true" bootstrap="vendor/autoload.php">
+  <testsuites>
+    <testsuite name="My Test Suite">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./src</directory>
+    </whitelist>
+  </filter>
+  <logging>
+    <log type="coverage-html" target="./reports/coverage-html" />
+  </logging>
+</phpunit>
