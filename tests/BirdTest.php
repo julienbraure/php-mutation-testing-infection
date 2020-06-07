@@ -23,5 +23,6 @@ class BirdTest extends TestCase
 
         $this->assertEquals(Species::DUCK, $duck->getSpecies());
         $this->assertEquals(70, $duck->getSize());
+        $this->assertEquals(2, $duck->getLegsCount());
     }
 }
