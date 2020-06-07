@@ -1,0 +1,577 @@
+Escaped mutants:
+================
+
+
+1) /home/ubuntu/mutation/src/Bird.php:57    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         $this->age++;
+     }
+-    public function getLegsCount() : int
++    protected function getLegsCount() : int
+     {
+         return 2;
+     }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (2 tests, 6 assertions)
+
+
+2) /home/ubuntu/mutation/src/Bird.php:59    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     }
+     public function getLegsCount() : int
+     {
+-        return 2;
++        return 1;
+     }
+     public function __toString() : string
+     {
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (2 tests, 6 assertions)
+
+
+3) /home/ubuntu/mutation/src/Bird.php:59    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     }
+     public function getLegsCount() : int
+     {
+-        return 2;
++        return 3;
+     }
+     public function __toString() : string
+     {
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (2 tests, 6 assertions)
+
+
+4) /home/ubuntu/mutation/src/Bird.php:59    [M] IntegerNegation
+
+--- Original
++++ New
+@@ @@
+     }
+     public function getLegsCount() : int
+     {
+-        return 2;
++        return -2;
+     }
+     public function __toString() : string
+     {
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (2 tests, 6 assertions)
+
+
+5) /home/ubuntu/mutation/src/CalendarService.php:13    [M] OneZeroInteger
+
+--- Original
++++ New
+@@ @@
+      */
+     public function isItSpringYet(array $birds) : bool
+     {
+-        $swallowsCount = 0;
++        $swallowsCount = 1;
+         foreach ($birds as $bird) {
+             if ($bird->getSpecies() == Species::SWALLOW) {
+                 $swallowsCount++;
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (1 test, 1 assertion)
+
+
+6) /home/ubuntu/mutation/src/CalendarService.php:16    [M] Equal
+
+--- Original
++++ New
+@@ @@
+     {
+         $swallowsCount = 0;
+         foreach ($birds as $bird) {
+-            if ($bird->getSpecies() == Species::SWALLOW) {
++            if ($bird->getSpecies() != Species::SWALLOW) {
+                 $swallowsCount++;
+             }
+         }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (1 test, 1 assertion)
+
+
+7) /home/ubuntu/mutation/src/CalendarService.php:21    [M] GreaterThan
+
+--- Original
++++ New
+@@ @@
+                 $swallowsCount++;
+             }
+         }
+-        return $swallowsCount > 1;
++        return $swallowsCount >= 1;
+     }
+ }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+OK (1 test, 1 assertion)
+
+Timed Out mutants:
+==================
+
+Killed mutants:
+===============
+
+
+1) /home/ubuntu/mutation/src/Bird.php:24    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+     protected $size;
+     /** @var The age (in years) of this bird */
+     protected $age;
+-    public function __construct($species, $sex, $size, $age = 0)
++    public function __construct($species, $sex, $size, $age = -1)
+     {
+         $this->species = $species;
+         $this->sex = $sex;
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.F
+
+Time: 28 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) BirdTest::testPigeon
+Failed asserting that 0 matches expected 1.
+
+/home/ubuntu/mutation/tests/BirdTest.php:16
+
+FAILURES!
+Tests: 2, Assertions: 4, Failures: 1.
+
+
+2) /home/ubuntu/mutation/src/Bird.php:24    [M] OneZeroInteger
+
+--- Original
++++ New
+@@ @@
+     protected $size;
+     /** @var The age (in years) of this bird */
+     protected $age;
+-    public function __construct($species, $sex, $size, $age = 0)
++    public function __construct($species, $sex, $size, $age = 1)
+     {
+         $this->species = $species;
+         $this->sex = $sex;
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.F
+
+Time: 27 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) BirdTest::testPigeon
+Failed asserting that 2 matches expected 1.
+
+/home/ubuntu/mutation/tests/BirdTest.php:16
+
+FAILURES!
+Tests: 2, Assertions: 4, Failures: 1.
+
+
+3) /home/ubuntu/mutation/src/Bird.php:32    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+         $this->size = $size;
+         $this->age = $age;
+     }
+-    public function getSpecies() : string
++    protected function getSpecies() : string
+     {
+         return $this->species;
+     }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+E
+
+Time: 27 ms, Memory: 4.00 MB
+
+There was 1 error:
+
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Error: Call to protected method Example\Bird::getSpecies() from context 'Example\CalendarService'
+
+/home/ubuntu/mutation/src/CalendarService.php:16
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:25
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+
+
+4) /home/ubuntu/mutation/src/Bird.php:37    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->species;
+     }
+-    public function getSex() : string
++    protected function getSex() : string
+     {
+         return $this->sex;
+     }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+E
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 error:
+
+1) BirdTest::testPigeon
+Error: Call to protected method Example\Bird::getSex() from context 'BirdTest'
+
+/home/ubuntu/mutation/tests/BirdTest.php:15
+
+ERRORS!
+Tests: 1, Assertions: 1, Errors: 1.
+
+
+5) /home/ubuntu/mutation/src/Bird.php:42    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->sex;
+     }
+-    public function getSize() : string
++    protected function getSize() : string
+     {
+         return $this->size;
+     }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.E                                                                  2 / 2 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 error:
+
+1) BirdTest::testDuck
+Error: Call to protected method Example\Bird::getSize() from context 'BirdTest'
+
+/home/ubuntu/mutation/tests/BirdTest.php:25
+
+ERRORS!
+Tests: 2, Assertions: 5, Errors: 1.
+
+
+6) /home/ubuntu/mutation/src/Bird.php:47    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->size;
+     }
+-    public function getAge() : int
++    protected function getAge() : int
+     {
+         return $this->age;
+     }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+E
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 error:
+
+1) BirdTest::testPigeon
+Error: Call to protected method Example\Bird::getAge() from context 'BirdTest'
+
+/home/ubuntu/mutation/tests/BirdTest.php:16
+
+ERRORS!
+Tests: 1, Assertions: 2, Errors: 1.
+
+
+7) /home/ubuntu/mutation/src/Bird.php:52    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+     {
+         return $this->age;
+     }
+-    public function incrementAge() : void
++    protected function incrementAge() : void
+     {
+         $this->age++;
+     }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+E
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 error:
+
+1) BirdTest::testPigeon
+Error: Call to protected method Example\Bird::incrementAge() from context 'BirdTest'
+
+/home/ubuntu/mutation/tests/BirdTest.php:12
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+
+
+8) /home/ubuntu/mutation/src/Bird.php:54    [M] Increment
+
+--- Original
++++ New
+@@ @@
+     }
+     public function incrementAge() : void
+     {
+-        $this->age++;
++        $this->age--;
+     }
+     public function getLegsCount() : int
+     {
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+F
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) BirdTest::testPigeon
+Failed asserting that -1 matches expected 1.
+
+/home/ubuntu/mutation/tests/BirdTest.php:16
+
+FAILURES!
+Tests: 1, Assertions: 3, Failures: 1.
+
+
+9) /home/ubuntu/mutation/src/CalendarService.php:11    [M] PublicVisibility
+
+--- Original
++++ New
+@@ @@
+      *
+      * Rule: "A swallow does not a spring make"
+      */
+-    public function isItSpringYet(array $birds) : bool
++    protected function isItSpringYet(array $birds) : bool
+     {
+         $swallowsCount = 0;
+         foreach ($birds as $bird) {
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+E                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 error:
+
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Error: Call to protected method Example\CalendarService::isItSpringYet() from context 'CalendarServiceTest'
+
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:21
+
+ERRORS!
+Tests: 1, Assertions: 0, Errors: 1.
+
+
+10) /home/ubuntu/mutation/src/CalendarService.php:13    [M] DecrementInteger
+
+--- Original
++++ New
+@@ @@
+      */
+     public function isItSpringYet(array $birds) : bool
+     {
+-        $swallowsCount = 0;
++        $swallowsCount = -1;
+         foreach ($birds as $bird) {
+             if ($bird->getSpecies() == Species::SWALLOW) {
+                 $swallowsCount++;
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Failed asserting that false is true.
+
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:25
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+
+11) /home/ubuntu/mutation/src/CalendarService.php:15    [M] Foreach_
+
+--- Original
++++ New
+@@ @@
+     public function isItSpringYet(array $birds) : bool
+     {
+         $swallowsCount = 0;
+-        foreach ($birds as $bird) {
++        foreach (array() as $bird) {
+             if ($bird->getSpecies() == Species::SWALLOW) {
+                 $swallowsCount++;
+             }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Failed asserting that false is true.
+
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:25
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+
+12) /home/ubuntu/mutation/src/CalendarService.php:17    [M] Increment
+
+--- Original
++++ New
+@@ @@
+         $swallowsCount = 0;
+         foreach ($birds as $bird) {
+             if ($bird->getSpecies() == Species::SWALLOW) {
+-                $swallowsCount++;
++                $swallowsCount--;
+             }
+         }
+         return $swallowsCount > 1;
+     }
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 26 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Failed asserting that false is true.
+
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:25
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+
+13) /home/ubuntu/mutation/src/CalendarService.php:21    [M] GreaterThanNegotiation
+
+--- Original
++++ New
+@@ @@
+                 $swallowsCount++;
+             }
+         }
+-        return $swallowsCount > 1;
++        return $swallowsCount <= 1;
+     }
+ }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 27 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Failed asserting that false is true.
+
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:25
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
+
+Errors mutants:
+===============
+
+Not Covered mutants:
+====================
