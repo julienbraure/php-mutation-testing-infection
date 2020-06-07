@@ -32,4 +32,12 @@ class CalendarServiceTest extends TestCase
            new Bird(Species::SWALLOW, Sex::MALE, 18),
         ]));
     }
+
+    public function testIsItSpringYetIsFalseWhen2Pigeon()
+    {
+        $this->assertFalse($this->calendarService->isItSpringYet([
+           new Bird(Species::PIGEON, Sex::MALE, 18),
+           new Bird(Species::PIGEON, Sex::MALE, 18),
+        ]));
+    }
 }

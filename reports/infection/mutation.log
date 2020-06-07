@@ -1,29 +1,6 @@
 Escaped mutants:
 ================
 
-
-1) /home/ubuntu/mutation/src/CalendarService.php:16    [M] Equal
-
---- Original
-+++ New
-@@ @@
-     {
-         $swallowsCount = 0;
-         foreach ($birds as $bird) {
--            if ($bird->getSpecies() == Species::SWALLOW) {
-+            if ($bird->getSpecies() != Species::SWALLOW) {
-                 $swallowsCount++;
-             }
-         }
-
-PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
-
-..                                                                  2 / 2 (100%)
-
-Time: 26 ms, Memory: 4.00 MB
-
-OK (2 tests, 2 assertions)
-
 Timed Out mutants:
 ==================
 
@@ -47,9 +24,9 @@ Killed mutants:
 
 PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
-F
+...F
 
-Time: 27 ms, Memory: 4.00 MB
+Time: 29 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -59,7 +36,7 @@ Failed asserting that 0 matches expected 1.
 /home/ubuntu/mutation/tests/BirdTest.php:16
 
 FAILURES!
-Tests: 1, Assertions: 3, Failures: 1.
+Tests: 4, Assertions: 6, Failures: 1.
 
 
 2) /home/ubuntu/mutation/src/Bird.php:24    [M] OneZeroInteger
@@ -78,9 +55,9 @@ Tests: 1, Assertions: 3, Failures: 1.
 
 PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
-F
+...F
 
-Time: 27 ms, Memory: 4.00 MB
+Time: 28 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -90,7 +67,7 @@ Failed asserting that 2 matches expected 1.
 /home/ubuntu/mutation/tests/BirdTest.php:16
 
 FAILURES!
-Tests: 1, Assertions: 3, Failures: 1.
+Tests: 4, Assertions: 6, Failures: 1.
 
 
 3) /home/ubuntu/mutation/src/Bird.php:32    [M] PublicVisibility
@@ -111,14 +88,15 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 E
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 27 ms, Memory: 4.00 MB
 
 There was 1 error:
 
-1) BirdTest::testPigeon
-Error: Call to protected method Example\Bird::getSpecies() from context 'BirdTest'
+1) CalendarServiceTest::testIsItSpringYetIsTrueWhen2SwallowAndOthers
+Error: Call to protected method Example\Bird::getSpecies() from context 'Example\CalendarService'
 
-/home/ubuntu/mutation/tests/BirdTest.php:14
+/home/ubuntu/mutation/src/CalendarService.php:16
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:25
 
 ERRORS!
 Tests: 1, Assertions: 0, Errors: 1.
@@ -173,7 +151,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 .E                                                                  2 / 2 (100%)
 
-Time: 27 ms, Memory: 4.00 MB
+Time: 26 ms, Memory: 4.00 MB
 
 There was 1 error:
 
@@ -204,7 +182,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 E
 
-Time: 27 ms, Memory: 4.00 MB
+Time: 26 ms, Memory: 4.00 MB
 
 There was 1 error:
 
@@ -235,7 +213,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 E
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 25 ms, Memory: 4.00 MB
 
 There was 1 error:
 
@@ -266,7 +244,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 F
 
-Time: 27 ms, Memory: 4.00 MB
+Time: 26 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -297,7 +275,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 .E                                                                  2 / 2 (100%)
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 27 ms, Memory: 4.00 MB
 
 There was 1 error:
 
@@ -310,38 +288,7 @@ ERRORS!
 Tests: 2, Assertions: 6, Errors: 1.
 
 
-10) /home/ubuntu/mutation/src/Bird.php:59    [M] IncrementInteger
-
---- Original
-+++ New
-@@ @@
-     }
-     public function getLegsCount() : int
-     {
--        return 2;
-+        return 3;
-     }
-     public function __toString() : string
-     {
-
-PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
-
-.F                                                                  2 / 2 (100%)
-
-Time: 27 ms, Memory: 4.00 MB
-
-There was 1 failure:
-
-1) BirdTest::testDuck
-Failed asserting that 3 matches expected 2.
-
-/home/ubuntu/mutation/tests/BirdTest.php:26
-
-FAILURES!
-Tests: 2, Assertions: 7, Failures: 1.
-
-
-11) /home/ubuntu/mutation/src/Bird.php:59    [M] IntegerNegation
+10) /home/ubuntu/mutation/src/Bird.php:59    [M] IntegerNegation
 
 --- Original
 +++ New
@@ -372,6 +319,37 @@ FAILURES!
 Tests: 2, Assertions: 7, Failures: 1.
 
 
+11) /home/ubuntu/mutation/src/Bird.php:59    [M] IncrementInteger
+
+--- Original
++++ New
+@@ @@
+     }
+     public function getLegsCount() : int
+     {
+-        return 2;
++        return 3;
+     }
+     public function __toString() : string
+     {
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+.F                                                                  2 / 2 (100%)
+
+Time: 27 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) BirdTest::testDuck
+Failed asserting that 3 matches expected 2.
+
+/home/ubuntu/mutation/tests/BirdTest.php:26
+
+FAILURES!
+Tests: 2, Assertions: 7, Failures: 1.
+
+
 12) /home/ubuntu/mutation/src/Bird.php:59    [M] DecrementInteger
 
 --- Original
@@ -390,7 +368,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 .F                                                                  2 / 2 (100%)
 
-Time: 27 ms, Memory: 4.00 MB
+Time: 26 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -481,9 +459,9 @@ Tests: 1, Assertions: 1, Failures: 1.
 
 PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
-.F                                                                  2 / 2 (100%)
+.F
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 27 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -514,7 +492,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 F
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 27 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -527,7 +505,38 @@ FAILURES!
 Tests: 1, Assertions: 1, Failures: 1.
 
 
-17) /home/ubuntu/mutation/src/CalendarService.php:17    [M] Increment
+17) /home/ubuntu/mutation/src/CalendarService.php:16    [M] Equal
+
+--- Original
++++ New
+@@ @@
+     {
+         $swallowsCount = 0;
+         foreach ($birds as $bird) {
+-            if ($bird->getSpecies() == Species::SWALLOW) {
++            if ($bird->getSpecies() != Species::SWALLOW) {
+                 $swallowsCount++;
+             }
+         }
+
+PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
+
+..F                                                                 3 / 3 (100%)
+
+Time: 27 ms, Memory: 4.00 MB
+
+There was 1 failure:
+
+1) CalendarServiceTest::testIsItSpringYetIsFalseWhen2Pigeon
+Failed asserting that true is false.
+
+/home/ubuntu/mutation/tests/CalendarServiceTest.php:40
+
+FAILURES!
+Tests: 3, Assertions: 3, Failures: 1.
+
+
+18) /home/ubuntu/mutation/src/CalendarService.php:17    [M] Increment
 
 --- Original
 +++ New
@@ -545,7 +554,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 F
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 27 ms, Memory: 4.00 MB
 
 There was 1 failure:
 
@@ -558,7 +567,7 @@ FAILURES!
 Tests: 1, Assertions: 1, Failures: 1.
 
 
-18) /home/ubuntu/mutation/src/CalendarService.php:21    [M] GreaterThan
+19) /home/ubuntu/mutation/src/CalendarService.php:21    [M] GreaterThan
 
 --- Original
 +++ New
@@ -573,7 +582,7 @@ Tests: 1, Assertions: 1, Failures: 1.
 
 PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
-.F                                                                  2 / 2 (100%)
+.F
 
 Time: 26 ms, Memory: 4.00 MB
 
@@ -588,7 +597,7 @@ FAILURES!
 Tests: 2, Assertions: 2, Failures: 1.
 
 
-19) /home/ubuntu/mutation/src/CalendarService.php:21    [M] GreaterThanNegotiation
+20) /home/ubuntu/mutation/src/CalendarService.php:21    [M] GreaterThanNegotiation
 
 --- Original
 +++ New
@@ -605,7 +614,7 @@ PHPUnit 7.3.5 by Sebastian Bergmann and contributors.
 
 F
 
-Time: 26 ms, Memory: 4.00 MB
+Time: 27 ms, Memory: 4.00 MB
 
 There was 1 failure:
 

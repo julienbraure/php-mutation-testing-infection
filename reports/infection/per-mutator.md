@@ -3,7 +3,7 @@
 | Mutator | Mutations | Killed | Escaped | Errors | Timed Out | MSI | Covered MSI |
 | ------- | --------- | ------ | ------- |------- | --------- | --- | ----------- |
 | DecrementInteger | 3 | 3 | 0 | 0 | 0 | 100| 100|
-| Equal | 1 | 0 | 1 | 0 | 0 | 0| 0|
+| Equal | 1 | 1 | 0 | 0 | 0 | 100| 100|
 | Foreach_ | 1 | 1 | 0 | 0 | 0 | 100| 100|
 | GreaterThan | 1 | 1 | 0 | 0 | 0 | 100| 100|
 | GreaterThanNegotiation | 1 | 1 | 0 | 0 | 0 | 100| 100|
